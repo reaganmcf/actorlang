@@ -1,0 +1,11 @@
+actor printer {
+  on printMessage consume (msg) {
+    print msg
+  }
+}
+
+actor messager {
+  on startup {
+    send printer (printMessage "foo")
+  }
+}
